@@ -1,20 +1,10 @@
-const grey=document.querySelector("#grey");
-const white=document.querySelector("#white");
-const yellow=document.querySelector("#yellow");
-const blue=document.querySelector("#blue");
+const buttons=document.querySelectorAll(".button");
 const body=document.querySelector("body");
-
-// console.log(grey,white,yellow,blue,body);
-
-grey.addEventListener("click",function(){
-    body.style.backgroundColor="grey";
-})
-yellow.addEventListener("click",function(){
-    body.style.backgroundColor="yellow";
-});
-white.addEventListener("click",function(){
-    body.style.backgroundColor="white";
-});
-blue.addEventListener("click",function(){
-    body.style.backgroundColor="blue";
+console.log(buttons);
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+    if(e.target.id==="grey"||e.target.id==="blue"||e.target.id==="white"||e.target.id==="yellow"){
+        body.style.backgroundColor=e.target.id;
+    }
+    });
 });
